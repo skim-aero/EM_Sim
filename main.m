@@ -1,33 +1,42 @@
-clear all;
-close all;
+%% Ellipsoidal methods (EM) simulation"
+% Sukkeun Kim (Sukkeun.Kim@cranfield.ac.uk)
 
-% Mean and covariance of the estimates to be fused 
+clc; clear; close all;
+
+addpath("functions")
+
+%% Mean and covariance of the estimates to be fused 
 PAB = [0.5 0; 0 0.5];
 
+% E.g. 1
 % xA = [1; 2];
 % PA = [4 1.8; 1.8 3.5];
 % 
 % xB = [0.8; 1.3];
 % PB = [4.5  0.5; 0.5 2.7];
 
+% E.g. 2
 % xA = [0; 0];
 % PA = [4 1.8; 1.8 3.5];
 % 
 % xB = [0; 0];
 % PB = [4.5  0.5; 0.5 2.7];
 
+% E.g. 3
 xA = [0.5; 1];
 PA = [2.5 -1; -1 1.2];
 
 xB = [2; 1];
 PB = [0.8  -0.5; -0.5 4];
 
+% E.g. 4
 % xA = [0; 0];
 % PA = [4 1.8; 1.8 3.5];
 % 
 % xB = [10; 5];
 % PB = [6.5  1.5; 1.5 4.7];
 
+%% EM algorithms
 % Calculate the 95% confidence line
 [r_ellipseA,XA,YA] = calcEllipse(xA, PA);
 [r_ellipseB,XB,YB] = calcEllipse(xB, PB);
@@ -91,7 +100,6 @@ tic
 [x_EI,P_EI] = EI(xA,PA,xB,PB);
 toc
 [r_ellipse_EI,X_EI,Y_EI] = calcEllipse(x_EI, P_EI);
-
 
 %% Draw the ellipsoids
 plot(r_ellipseA(:,1) + XA,r_ellipseA(:,2) + YA,':','color','r', LineWidth = 2) % A
