@@ -13,3 +13,4 @@ For the detail of the algorithms/methods, please refer to the original paper fol
 * 3rd Mar 2023 Beta 0.0: First commit
 * 19th Jul 2024 Release 1.0: First public
 * 11th Nov 2024 Release 1.1: Minor updates
+* 12th Nov 2024 Release 1.2: Minor modifications
