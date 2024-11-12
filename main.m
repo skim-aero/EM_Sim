@@ -2,7 +2,6 @@
 % Sukkeun Kim (Sukkeun.Kim@cranfield.ac.uk)
 
 clc; clear; close all;
-
 addpath("functions")
 
 %% Mean and covariance of the estimates to be fused 
